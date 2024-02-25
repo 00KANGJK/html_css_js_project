@@ -24,12 +24,12 @@ li {
   
 /* header 요소에 대한 스타일 설정 */
 header{
-  position: absolute; /* header의 위치를 절대 위치로 설정. 이로 인해 상위 요소를 기준으로 위치가 결정됨 */
-  color: black; /* header 안의 텍스트 색상을 검은색으로 설정 */
-  top: 0; /* header의 상단을 상위 요소의 상단에 붙여서 위치를 설정 */
-  z-index: 1; /* header의 스택 순서를 1로 설정. 이로 인해 다른 요소와 겹칠 경우 header가 위에 위치함 */
-  width: 100%; /* header의 너비를 상위 요소의 전체 너비로 설정 */
-  padding: 1rem; /* header 내부의 여백을 1rem(상대적 단위)으로 설정 */
+    position:absolute; /*  absolute -> fixed */
+    color:black; /*  black -> white */
+    top: 0; /* header의 상단을 상위 요소의 상단에 붙여서 위치를 설정 */
+    z-index: 1; /* header의 스택 순서를 1로 설정. 이로 인해 다른 요소와 겹칠 경우 header가 위에 위치함 */
+    width: 100%; /* header의 너비를 상위 요소의 전체 너비로 설정 */
+    padding: 1rem; /* header 내부의 여백을 1rem(상대적 단위)으로 설정 */
 }
 
 /* header 내부의 .container 클래스에 대한 스타일 설정 */
@@ -55,6 +55,7 @@ header button{
     background: transparent; /* 버튼의 배경색을 투명으로 설정 */
     border: 0; /* 버튼의 테두리를 제거 */
     cursor: pointer; /* 마우스 커서를 버튼 위에 올렸을 때의 모양을 '손가락' 모양으로 설정 */
+    color:white;
 }
 
 /* header 내부의 h1 태그 안의 button에 대한 스타일 설정 */
@@ -64,8 +65,6 @@ header h1 button{
 }
 
 /* header 내부의 nav 태그 안의 ul의 li 안의 button에 대한 스타일 설정 */
-    header nav ul li button{
+header nav ul li button{
     font-size: 1.2rem; /* 폰트 크기를 1.2rem으로 설정 */
 }
-  
-  
