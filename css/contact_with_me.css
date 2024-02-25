@@ -1,0 +1,14 @@
+section.contact .contact-me::after{
+    content:"";
+    display:block;
+    clear:both;
+  }
+  section.contact .contact-me .left{
+    width:30%;
+    float:left;
+  }
+  section.contact .contact-me .right{
+    float:left;
+    width:65%;
+    margin-left:5%;
+  }
