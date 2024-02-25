@@ -285,3 +285,18 @@ section .do-me .do-inner:hover{
 section .do-me .do-inner:hover i{
     color:white;
 }
+
+/* !!!!!!!!!!!!!!!!!! */
+/* 여기서부터 섹션영역 - 배경 css */
+/* !!!!!!!!!!!!!!!!!! */
+
+.bg{
+    background:url('./images/background.jpg') center center;
+    background-size:cover;
+    background-attachment:fixed;
+    height:650px;
+}
+
+/* !!!!!!!!!!!!!!!!!! */
+/* 여기서부터 섹션영역 - what i do css */
+/* !!!!!!!!!!!!!!!!!! */
