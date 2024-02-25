@@ -1,179 +1,167 @@
-/* main 영역의 폰트 변경 */
+/* css 파일 맨 윗줄에 추가 */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap');
 
-/* 모든 HTML 요소에 대한 기본 스타일 설정 */
+/* 기본 세팅 */
 * {
-    margin: 0; /* 모든 요소의 외부 여백을 0으로 설정 */
-    padding: 0; /* 모든 요소의 내부 여백을 0으로 설정 */
-    box-sizing: border-box; /* 요소의 너비와 높이를 border를 포함하여 계산 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* 모든 링크에 대한 기본 스타일 설정 */
 a, a:link, a:visited {
-    color: inherit; /* 링크 색상을 상위 요소에서 상속 */
-    text-decoration: none; /* 링크 밑줄 제거 */
+    color: inherit;
+    text-decoration: none;
 }
 
-/* 목록 항목에 대한 기본 스타일 설정 */
 li {
-    list-style: none; /* 목록 항목 앞의 기본 마커 제거 */
+    list-style: none;
+}
+
+.container{
+    width: 1140px;
+    margin: 0 auto;
 }
 
 /* !!!!!!!!!!!!!!!!!! */
 /* 여기서부터 헤더영역 css */
 /* !!!!!!!!!!!!!!!!!! */
 
-/* .container 클래스에 대한 스타일 설정 */
-.container{
-    width: 1140px; /* 컨테이너의 너비를 1140픽셀로 설정 */
-    margin: 0 auto; /* 컨테이너의 상하 여백을 0, 좌우 여백을 자동으로 설정하여 가운데 정렬 */
-}
-  
-/* header 요소에 대한 스타일 설정 */
 header{
-    position:absolute; /*  absolute -> fixed */
-    color:black; /*  black -> white */
-    top: 0; /* header의 상단을 상위 요소의 상단에 붙여서 위치를 설정 */
-    z-index: 1; /* header의 스택 순서를 1로 설정. 이로 인해 다른 요소와 겹칠 경우 header가 위에 위치함 */
-    width: 100%; /* header의 너비를 상위 요소의 전체 너비로 설정 */
-    padding: 1rem; /* header 내부의 여백을 1rem(상대적 단위)으로 설정 */
+    position:fixed; /*  absolute -> fixed */
+    color:white; /*  black -> white */ 
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 1rem;
 }
 
-/* header 내부의 .container 클래스에 대한 스타일 설정 */
 header .container{
-    display: flex; /* 컨테이너 내부의 요소를 flexbox로 배치 */
-    justify-content: space-between; /* 컨테이너 내부의 요소 사이에 공간을 동일하게 배분 */
-    align-items: center; /* 컨테이너 내부의 요소를 중앙에 위치시킴 */
-    width: 100%; /* 컨테이너의 너비를 상위 요소의 전체 너비로 설정 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-/* header 내부의 nav 태그 안의 ul에 대한 스타일 설정 */
 header nav ul{
-    display: flex; /* ul 내부의 li 요소를 flexbox로 배치 */
+    display: flex;
 }
 
-/* header 내부의 nav 태그 안의 ul의 li에 대한 스타일 설정 */
 header nav ul li{
-    padding: 10px; /* li 요소의 내부 여백을 10픽셀로 설정 */
+    padding: 10px;
 }
 
-/* header 내부의 button에 대한 스타일 설정 */
 header button{
-    background: transparent; /* 버튼의 배경색을 투명으로 설정 */
-    border: 0; /* 버튼의 테두리를 제거 */
-    cursor: pointer; /* 마우스 커서를 버튼 위에 올렸을 때의 모양을 '손가락' 모양으로 설정 */
+    background: transparent;
+    border: 0;
+    cursor: pointer;
     color:white;
 }
 
-/* header 내부의 h1 태그 안의 button에 대한 스타일 설정 */
 header h1 button{
-    font-size: 2rem; /* 폰트 크기를 2rem으로 설정 */
-    font-weight: bold; /* 폰트 두께를 bold로 설정 */
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-/* header 내부의 nav 태그 안의 ul의 li 안의 button에 대한 스타일 설정 */
 header nav ul li button{
-    font-size: 1.2rem; /* 폰트 크기를 1.2rem으로 설정 */
+    font-size: 1.2rem;
 }
-  
 
 /* !!!!!!!!!!!!!!!!!! */
 /* 여기서부터 메인영역 css */
 /* !!!!!!!!!!!!!!!!!! */
 
-/* main 요소에 대한 스타일 설정 */
+/* 메인 영역 레이아웃 설정 */
 main{
-    width: 100%; /* main 요소의 너비를 상위 요소의 전체 너비로 설정 */
-    height: 100vh; /* main 요소의 높이를 뷰포트의 높이로 설정 */
-    color: white; /* main 요소 내부의 텍스트 색상을 흰색으로 설정 */
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/me.jpg') center center; 
-    /* 배경 이미지를 'images/me.jpg'로 설정하고, 이미지 위에 검은색의 반투명 그라디언트를 적용. 이미지는 중앙에 위치 */
-    background-size: cover; /* 배경 이미지의 크기를 요소의 크기에 맞게 조절 */
-    display: flex; /* main 요소 내부의 요소를 flexbox로 배치 */
-    justify-content: center; /* main 요소 내부의 요소를 가로축(center)에 중앙에 위치시킴 */
-    align-items: center; /* main 요소 내부의 요소를 세로축(center)에 중앙에 위치시킴 */
-    text-align: center; /* main 요소 내부의 텍스트를 가운데 정렬 */
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/me.jpg') center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-/* main 요소 내부의 h4 태그에 대한 스타일 설정 */
+/* 메인 영역 텍스트 설정 */
 main h4{
-    font-size: 2rem; /* h4 태그의 폰트 크기를 2rem으로 설정 */
+    font-size: 2rem;
 }
 
-/* main 요소 내부의 h2 태그에 대한 스타일 설정 */
 main h2{
-    font-size: 3.5rem; /* h2 태그의 폰트 크기를 3.5rem으로 설정 */
-    margin: 2rem 0; /* h2 태그의 상하 여백을 2rem, 좌우 여백을 0으로 설정 */
-    letter-spacing: 3px; /* h2 태그의 글자 간격을 3픽셀로 설정 */
-    font-family: 'Varela Round', sans-serif; 
+    font-size: 3.5rem;
+    margin: 2rem 0;
+    letter-spacing: 3px;
+    font-family: 'Varela Round', sans-serif;
     /* h2 태그의 폰트를 'Varela Round'로 설정하고, 해당 폰트를 로드할 수 없는 경우 sans-serif 폰트를 사용 */
 }
 
-/* main 요소 내부의 p 태그에 대한 스타일 설정 */
 main p{
-    max-width: 500px; /* p 태그의 최대 너비를 500픽셀로 설정 */
-    margin: 0 auto; /* p 태그의 상하 여백을 0, 좌우 여백을 자동으로 설정하여 가운데 정렬 */
-    font-size: 1.25rem; /* p 태그의 폰트 크기를 1.25rem으로 설정 */
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.25rem;
 }
 
-/* main 요소 내부의 download 클래스를 가진 button에 대한 스타일 설정 */
+/* 메인 영역 버튼 설정 */
 main button.download{
-    background-color: transparent; /* 버튼의 배경색을 투명으로 설정 */
-    border: 3px solid white; /* 버튼의 테두리를 3픽셀 두께의 흰색 실선으로 설정 */
-    border-radius: 20px; /* 버튼의 테두리 모서리를 둥글게 처리 (반지름 20픽셀) */
-    padding: 1rem 2rem; /* 버튼 내부의 상하 여백을 1rem, 좌우 여백을 2rem으로 설정 */
-    margin-top: 3rem; /* 버튼의 상단 여백을 3rem으로 설정 */
-    color: white; /* 버튼 내부의 텍스트 색상을 흰색으로 설정 */
-    font-weight: bold; /* 버튼 내부의 텍스트 두께를 bold로 설정 */
-    cursor: pointer; /* 마우스 커서를 버튼 위에 올렸을 때의 모양을 '손가락' 모양으로 설정 */
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* main 요소 내부의 mouse 클래스를 가진 button에 대한 스타일 설정 */
+/* 메인 영역 버튼 설정 추가 */
 main button.mouse{
-    background-color: transparent; /* 버튼의 배경색을 투명으로 설정 */
-    border: none; /* 버튼의 테두리를 없앰 */
-    color: white; 
-    font-size: 2rem; 
-    position: absolute; 
-    bottom: 1rem; 
-    left: 50%; /* 버튼의 왼쪽을 상위 요소의 중앙에 위치시킴 */
-    transform: translateX(-50%); /* 버튼을 좌우로 -50% 이동시켜 정확히 중앙에 배치 */
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
     animation: upDown 1s ease-in-out infinite; 
-    /* upDown이라는 이름의 애니메이션을 적용. 애니메이션의 지속 시간은 1초, 타이밍 함수는 ease-in-out, 무한 반복 */
-    cursor: pointer; /* 마우스 커서를 버튼 위에 올렸을 때의 모양을 '손가락' 모양으로 설정 */
+    /* 마우스가 위아래로 움직이는 애니메이션 */
+    cursor: pointer;
 }
-  
-  /* upDown이라는 이름의 애니메이션 정의 */
+
+/* 마우스가 위아래로 움직이는 애니메이션 정의 */
 @keyframes upDown{
     0%{
-      bottom: 1rem; /* 애니메이션 시작 시점에서 버튼의 하단은 상위 요소 하단으로부터 1rem 떨어진 곳에 위치 */
+      bottom: 1rem;
     }
     50%{
-      bottom: 1.5rem; /* 애니메이션 중간 시점에서 버튼의 하단은 상위 요소 하단으로부터 1.5rem 떨어진 곳에 위치 */
+      bottom: 1.5rem;
     }
     100%{
-      bottom: 1rem; /* 애니메이션 종료 시점에서 버튼의 하단은 다시 상위 요소 하단으로부터 1rem 떨어진 곳에 위치 */
+      bottom: 1rem;
     }
 }
 
-/* main 요소 내부의 h2 태그 안의 span 태그의 가상 요소(::after)에 대한 스타일 설정 */
+/* 메인 영역 텍스트 타이핑 효과 구현하기 */
 main h2 span::after{
-    content: ""; /* 가상 요소의 내용을 빈 문자열로 설정 */
-    height: 40px; /* 가상 요소의 높이를 40픽셀로 설정 */
-    width: 3px; /* 가상 요소의 너비를 3픽셀로 설정 */
-    background-color: #fff; /* 가상 요소의 배경색을 흰색으로 설정 */
-    display: inline-block; /* 가상 요소를 인라인 블록 요소로 표시 */
-    animation: blink .7s ease-in-out infinite; /* blink라는 이름의 애니메이션을 적용. 애니메이션의 지속 시간은 0.7초, 타이밍 함수는 ease-in-out, 무한 반복 */
+    content: "";
+    height: 40px;
+    width: 3px;
+    background-color: #fff;
+    display: inline-block;
+    animation: blink .7s ease-in-out infinite;
 }
-  
-/* blink라는 이름의 애니메이션 정의 */
+
 @keyframes blink {
     0%{
-        opacity: 1; /* 애니메이션 시작 시점에서 가상 요소의 불투명도는 1 */
+        opacity: 1;
     }
     100%{
-        opacity: 0; /* 애니메이션 종료 시점에서 가상 요소의 불투명도는 0 */
+        opacity: 0;
     }
 }
-  
-  
+
+/* !!!!!!!!!!!!!!!!!! */
+/* 여기서부터 섹션영역 - about me css */
+/* !!!!!!!!!!!!!!!!!! */
+
