@@ -1,4 +1,5 @@
 // 텍스트 작성과 삭제 즉시 실행 함수
+// 즉시 실행 함수를 통해 전역 스코프의 변수 오염을 방지합니다.
 (function(){
     const spanEl = document.querySelector("main h2 span");
     const txtArr = ['Web Publisher', 'Front-End Developer', 'Web UI Designer', 'UX Designer', 'Back-End Developer'];
@@ -24,23 +25,34 @@
         writeTxt();
       }
     }
+    // writeTxt 함수를 호출하여 첫 번째 텍스트의 출력을 시작합니다.
     writeTxt();
   })();
 
 
-/* 수직 스크롤이 발생하면 header 태그에 active 클래스 추가 및 삭제 */
+
+// header 요소를 선택합니다.
 const headerEl = document.querySelector("header");
+
+// scroll 이벤트가 발생할 때 scrollCheck 함수를 호출합니다.
+// requestAnimationFrame을 사용하여 성능을 최적화합니다.
 window.addEventListener('scroll', function(){
   requestAnimationFrame(scrollCheck);
 });
+
+// scrollCheck 함수를 정의합니다.
 function scrollCheck(){
+  // 브라우저의 수직 스크롤 위치를 가져옵니다.
   let browerScrollY = window.scrollY ? window.scrollY : window.pageYOffset;
+
+  // 스크롤 위치가 0보다 크면 header 요소에 active 클래스를 추가하고, 그렇지 않으면 삭제합니다.
   if(browerScrollY > 0){
     headerEl.classList.add("active");
   }else{
     headerEl.classList.remove("active");
   }
 }
+
 
 
 /* 애니메이션 스크롤 이동 */
@@ -54,11 +66,13 @@ const animationMove = function(selector){
     // ④ 스크롤 이동
     window.scrollTo({ top: targetScorllY, behavior: 'smooth' });
   };
-  // 스크롤 이벤트 연결하기
-  const scollMoveEl = document.querySelectorAll("[data-animation-scroll='true']"); 
-  for(let i = 0; i < scollMoveEl.length; i++){
+
+
+// 스크롤 이벤트 연결하기
+const scollMoveEl = document.querySelectorAll("[data-animation-scroll='true']"); 
+for(let i = 0; i < scollMoveEl.length; i++){
     scollMoveEl[i].addEventListener('click', function(e){
-      const target = this.dataset.target;
-      animationMove(target);
+        const target = this.dataset.target;
+        animationMove(target);
     });
-  }
+}

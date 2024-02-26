@@ -68,16 +68,20 @@ header nav ul li button{
 
 header.active{
     background-color: rgba(0, 0, 0);
+    /*  fadeIn 애니메이션을 0.5초 동안 ease-in-out 속도로 적용합니다. */
     animation: fadeIn 0.5s ease-in-out; 
 }
 @keyframes fadeIn{
+    /* 애니메이션 시작 시점 */
     0%{
         opacity: 0;
     }
+    /* 애니메이션 종료 시점 */
     100%{
         opacity: 1;
     }
 }
+
 /* !!!!!!!!!!!!!!!!!! */
 /* 여기서부터 메인영역 css */
 /* !!!!!!!!!!!!!!!!!! */
